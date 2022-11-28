@@ -1,0 +1,14 @@
+<div *ngFor="let pizza of pizzas" 
+    class="alert alert-primary">
+    Id: {{pizza.id}}
+    <br>
+    Name: {{pizza.name}}
+    <br>
+    Price:{{pizza.price}}
+    <br>
+    <img 
+        width="300"
+        height ="300"
+        [src]="pizza.pic" 
+        alt="You are already drooling so much so no pic for u.."/>
+</div>

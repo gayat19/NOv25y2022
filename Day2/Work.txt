@@ -19,6 +19,13 @@ ng generate component <componentname>
 (or)
 ng g c <componentname>
 
+Component
+  ComponentClass
+  HTML
+  CSS
+  Karma
+
+
 create a service
 ng generate service <servicename>
 
@@ -28,4 +35,4 @@ npm install --save bootstrap
 (The above cmd will install bootstrap in the node modules)
 
 in the style.css
-@import '~bootstrap/dist/'
+@import '~bootstrap/dist/css/bootstrap.css';
