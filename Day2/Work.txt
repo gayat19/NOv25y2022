@@ -1,0 +1,31 @@
+Angular
+Create a new Application
+  ng new <appname>
+Name
+  lowercase
+  No special char
+
+Navigate inside the app folder
+cd <appname>
+
+Start the server
+ng serve
+(note:- pkeep the cmd with the above cmd running)
+
+Open the app in visual studio code
+
+Create a component
+ng generate component <componentname>
+(or)
+ng g c <componentname>
+
+create a service
+ng generate service <servicename>
+
+
+Install bootstrap
+npm install --save bootstrap
+(The above cmd will install bootstrap in the node modules)
+
+in the style.css
+@import '~bootstrap/dist/'
