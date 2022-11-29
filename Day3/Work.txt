@@ -1,0 +1,15 @@
+InterComponent Communication
+
+Service
+
+Input 
+Output
+
+
+Observable
+ Call to API
+   Get
+	Post
+
+  
+

@@ -36,3 +36,22 @@ npm install --save bootstrap
 
 in the style.css
 @import '~bootstrap/dist/css/bootstrap.css';
+
+
+
+
+List Pizzas
+Service
+  List of pizzas - array
+  GetPizzas - returns the list of pizzas
+  GetPizza - Returns a pizza using the Id
+  
+
+Pizzas
+  Iterate through the list and display teh pizza details
+
+Pizza Model
+  id
+  name
+  pic
+  price  
