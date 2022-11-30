@@ -1,5 +1,5 @@
-import { getInstructionStatements } from '@angular/compiler/src/render3/view/util';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Pizza } from '../models/pizza.model';
 import { PizzaService } from '../services/pizza.service';
 
@@ -11,10 +11,11 @@ import { PizzaService } from '../services/pizza.service';
 export class PizzadisplayComponent implements OnInit {
 
   @Input() pizzaId:number;
+  @Output() changeCount:EventEmitter<number>;
   pizza: Pizza;
   count:number;
   constructor(private pizzaService:PizzaService) { 
-    this.count=0;
+    this.count=1;
     this.pizzaId = 0;
     this.pizza = new  Pizza();
     this.pizzaService.callGetPizzaFromAPI().subscribe(data=>{
@@ -23,15 +24,17 @@ export class PizzadisplayComponent implements OnInit {
           this.pizza = element as Pizza
       });
     })
-
+    this.changeCount = new EventEmitter<number>();
   }
 
   increment(){
     this.count++;
+    this.changeCount.emit((this.count*this.pizza.price));
     //alert(this.count)
   }
   decrement(){
     this.count--;
+    this.changeCount.emit((this.count*this.pizza.price));
     //alert(this.count)
   }
   ngOnInit(): void {

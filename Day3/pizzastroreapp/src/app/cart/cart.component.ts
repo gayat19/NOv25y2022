@@ -38,7 +38,10 @@ export class CartComponent implements OnInit {
     
 
   }
-
+  calculateTotal(count:number){
+    console.log(count)
+    this.totalPrice = this.totalPrice+count
+  }
   showPizza(item:number){
     this.router.navigate(["pizza",item])
   }
