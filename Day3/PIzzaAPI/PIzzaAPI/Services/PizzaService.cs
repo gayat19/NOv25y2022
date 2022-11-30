@@ -35,5 +35,10 @@ namespace PIzzaAPI.Services
                 return fav;
             return null;
         }
+        public async Task<Pizza> AddPizza(Pizza pizza)
+        {
+            Pizza newPizza = await _repo.Add(pizza);
+            return newPizza;
+        }
     }
 }

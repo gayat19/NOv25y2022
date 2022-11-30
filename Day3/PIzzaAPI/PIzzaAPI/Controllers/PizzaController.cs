@@ -27,6 +27,16 @@ namespace PIzzaAPI.Controllers
 
         }
         [HttpPost]
+        [Route("AddPizza")]
+        public async Task<ActionResult<Pizza>> Add(Pizza pizza)
+        {
+            var myPizza = await _service.AddPizza(pizza);
+            if (myPizza == null)
+                return BadRequest("Pizza not added");
+            return Ok(myPizza);
+        }
+
+        [HttpPost]
         [Route("UpdateLike")]
         public async Task<ActionResult<Pizza>> UpdateLike(int key)
         {
@@ -44,5 +54,6 @@ namespace PIzzaAPI.Controllers
                 return BadRequest();
             return Ok(myPizza);
         }
+        
     }
 }

@@ -19,7 +19,14 @@ opts.AddPolicy("MyCors", options => options
 
 
 
-builder.Services.AddDbContext<PizzaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("pizzaCon")));
+builder.Services.AddDbContext<PizzaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("pizzaCon"), sqlServerOptionsAction: sqlopts =>
+{
+    sqlopts.EnableRetryOnFailure(
+        maxRetryCount:2,
+        maxRetryDelay:TimeSpan.FromSeconds(5),
+        errorNumbersToAdd:null
+        );
+}));
 builder.Services.AddScoped<IRepo<int, Pizza>, PizzaRepo>();
 builder.Services.AddScoped<PizzaService>();
 

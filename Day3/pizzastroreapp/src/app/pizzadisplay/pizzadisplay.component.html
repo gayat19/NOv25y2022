@@ -1,0 +1,9 @@
+<p>pizzadisplay works!</p>
+<div class="alert alert-primary">
+    {{pizza.name | uppercase}}
+    <br>
+    {{pizza.price | currency:'INR'}}
+    <button class="btn btn-success" (click)="increment()">+</button>
+    {{count}}
+    <button class="btn btn-danger" (click)="decrement()">-</button>
+</div>

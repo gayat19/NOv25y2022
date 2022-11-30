@@ -1,0 +1,10 @@
+<h2>Cart</h2>
+<h3>
+    The total amount payable is <em><mark>{{totalPrice}}</mark></em>
+</h3>
+<div *ngFor="let item of cartItems">
+    <app-pizzadisplay [pizzaId]="item"></app-pizzadisplay>
+    <button (click)="showPizza(item)" class="btn btn-info">{{item}}</button>
+    <hr>
+</div>
+

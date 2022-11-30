@@ -1,8 +1,11 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { Pizza } from "../models/pizza.model";
 
+@Injectable()
 export class PizzaService{
     pizzas:Pizza[];
-    constructor(){
+    constructor(private httpClient:HttpClient){
         this.pizzas = [{
             "id": 101,
             "name": "Cheese Overloaded",
@@ -20,7 +23,13 @@ export class PizzaService{
             "price": 450.75
           }]
     }
-    getPizzas(){
-      return this.pizzas;
+    // getPizzas(){
+    //   return this.pizzas;
+    // }
+    callGetPizzaFromAPI(){
+      return this.httpClient.get("http://localhost:5298/api/Pizza");
+    }
+    callUpdateLike(pid:number){
+      return this.httpClient.post("http://localhost:5298/api/Pizza/UpdateLike?key="+pid,null)
     }
 }
