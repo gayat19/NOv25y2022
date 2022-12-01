@@ -11,6 +11,8 @@ import { CartComponent } from './cart/cart.component';
 import { CartService } from './services/cart.service';
 import { PizzaSingleComponent } from './pizza-single/pizza-single.component';
 import { PizzadisplayComponent } from './pizzadisplay/pizzadisplay.component';
+import { NewpizzaComponent } from './newpizza/newpizza.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,15 @@ import { PizzadisplayComponent } from './pizzadisplay/pizzadisplay.component';
     AboutUsComponent,
     CartComponent,
     PizzaSingleComponent,
-    PizzadisplayComponent
+    PizzadisplayComponent,
+    NewpizzaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [PizzaService,CartService],

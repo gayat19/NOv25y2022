@@ -30,7 +30,7 @@ export class PizzadisplayComponent implements OnInit {
   increment(){
     this.count++;
     this.changeCount.emit((this.count*this.pizza.price));
-    //alert(this.count)
+    //alert(this.count) 
   }
   decrement(){
     this.count--;

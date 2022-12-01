@@ -1,0 +1,59 @@
+<!-- <h1>New Pizza</h1>
+<div>
+    <label class="form-control">Name</label>
+    <input type="text" 
+            class="form-control" 
+            [(ngModel)]="pizza.name"
+            required minlength="3"
+            #pname=ngModel>
+    <span *ngIf="pname.touched && !pname.valid" class="alert alert-danger">
+       <span *ngIf="pname.errors?.['required']"> Pizza name cannot be empty</span>
+       <span *ngIf="pname.errors?.['minlength']"> Pizza name cannot be less than 3 chars</span>
+    </span>
+    <label class="form-control">Price</label>
+    <input type="number" 
+            class="form-control" 
+            [(ngModel)]="pizza.price"
+            required min="1"
+            #pprice=ngModel>
+    <label class="form-control">Pic</label>
+    <input type="text" 
+            class="form-control" 
+            [(ngModel)]="pizza.pic"
+            #pname=ngModel>
+    <label class="form-control">IsFav</label>
+    <select (change) ="changeFav(pIsFav)"
+            class="form-control" 
+            #pIsFav>
+        <option value="true">True</option>
+        <option value="fasle">False</option>
+    </select>
+    <button class="btn btn-warning" (click)="addPizza()">Add Pizza</button>
+</div>-->
+<h1>New Pizza</h1>
+<form [formGroup]="myFrom"  >
+    <label class="form-control">Name</label>
+    <input type="text" 
+            class="form-control" 
+            required minlength="3"
+            formControlName="pname">
+    <span *ngIf="pname.touched && !pname.valid" class="alert alert-danger">
+       <span *ngIf="pname.errors?.['required']"> Pizza name cannot be empty</span>
+       <span *ngIf="pname.errors?.['minlength']"> Pizza name cannot be less than 3 chars</span>
+    </span>
+    <label class="form-control">Price</label>
+    <input type="number" 
+            class="form-control" 
+            required min="1">
+    <label class="form-control">Pic</label>
+    <input type="text" 
+            class="form-control" >
+    <label class="form-control">IsFav</label>
+    <select (change) ="changeFav(pIsFav)"
+            class="form-control" 
+            #pIsFav>
+        <option value="true">True</option>
+        <option value="fasle">False</option>
+    </select>
+    <button class="btn btn-warning" (click)="addPizza()">Add Pizza</button>
+</form>

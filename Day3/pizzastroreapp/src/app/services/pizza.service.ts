@@ -32,4 +32,7 @@ export class PizzaService{
     callUpdateLike(pid:number){
       return this.httpClient.post("http://localhost:5298/api/Pizza/UpdateLike?key="+pid,null)
     }
+    callAddPizza(pizza:Pizza){
+      return this.httpClient.post("http://localhost:5298/api/Pizza/AddPizza",pizza)
+    }
 }
